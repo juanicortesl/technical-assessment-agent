@@ -169,6 +169,90 @@ Assessments embed issues across these dimensions:
 - **Note what they skip** - Staff engineers know what NOT to fix
 - **Use the rubric** - Calibrate against strong/weak candidate patterns
 
+---
+
+## Creating New Assessments
+
+Want to generate a custom assessment? Use Claude Code to create one for you!
+
+### Quick Start
+
+In Claude Code, just say:
+
+```
+Generate a new senior-level assessment for a REST API with authentication issues
+```
+
+or
+
+```
+Create a mid-level React assessment focused on state management bugs
+```
+
+### What You'll Get
+
+Claude will create a complete, runnable assessment with:
+- ✅ All necessary files (package.json, tests, etc.)
+- ✅ Working code with intentional bugs
+- ✅ README with setup instructions
+- ✅ RUBRIC with evaluation criteria
+- ✅ 8-12 embedded issues across multiple categories
+
+### Customization Options
+
+Be specific about what you want:
+
+**Difficulty Level:**
+- "Mid-level" - Basic bugs, security issues, error handling
+- "Senior" - Concurrency, race conditions, scalability
+- "Staff" - Distributed systems, architectural decisions
+
+**Tech Stack:**
+- Node.js API (Express, REST, GraphQL)
+- React Frontend (hooks, state, performance)
+- Data Processing (CSV, batch jobs, streams)
+- Auth Systems (JWT, OAuth, sessions)
+- Microservices (distributed transactions, messaging)
+
+**Focus Areas:**
+- Security (injection, validation, secrets)
+- Performance (N+1, caching, memory)
+- Concurrency (race conditions, deadlocks)
+- Architecture (coupling, abstractions, patterns)
+
+### Example Prompts
+
+```
+"Create a staff-level assessment about payment processing with focus on
+distributed transactions and idempotency"
+```
+
+```
+"Generate a mid-level Next.js assessment with server-side rendering bugs"
+```
+
+```
+"Make a senior assessment for a data pipeline with concurrency and
+error handling issues"
+```
+
+### After Generation
+
+Claude will:
+1. Create all files in `examples/[level]/[name]/`
+2. Test that `npm install` and `npm start` work
+3. Verify tests run (some passing, some failing)
+4. Provide you with the assessment location
+
+Then you can:
+```bash
+cd examples/[level]/[assessment-name]
+npm install
+npm start
+```
+
+See [CLAUDE.md](./CLAUDE.md) for detailed generation guidelines.
+
 ## License
 
 MIT

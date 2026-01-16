@@ -22,6 +22,7 @@ interface Order {
   status: 'pending' | 'confirmed' | 'failed';
   total: number;
   items: OrderItem[];
+  paymentMethodId?: string;
 }
 
 export class OrderService extends EventEmitter {
@@ -84,6 +85,7 @@ export class OrderService extends EventEmitter {
       status: 'pending',
       total,
       items: request.items,
+      paymentMethodId: request.paymentMethodId,
     };
 
     // Process order asynchronously
@@ -133,7 +135,7 @@ export class OrderService extends EventEmitter {
       // Step 2: Process payment
       const paymentResult = await this.paymentClient.charge({
         amount: order.total,
-        paymentMethodId: order.paymentMethodId,
+        paymentMethodId: order.paymentMethodId!,
         orderId: order.id,
       });
 

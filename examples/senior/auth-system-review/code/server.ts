@@ -1,5 +1,6 @@
 import express from 'express';
 import { authMiddleware, generateTokens, refreshAccessToken, logout } from './authService';
+import './types';
 
 const app = express();
 app.use(express.json());
