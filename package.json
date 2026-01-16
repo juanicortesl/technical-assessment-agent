@@ -1,0 +1,16 @@
+{
+  "name": "technical-assessment-agent",
+  "version": "1.0.0",
+  "description": "Practice software engineering code review assessments",
+  "scripts": {
+    "install-all": "for dir in examples/*/*/; do (cd \"$dir\" && npm install); done"
+  },
+  "keywords": [
+    "code-review",
+    "assessment",
+    "hiring",
+    "engineering"
+  ],
+  "author": "",
+  "license": "MIT"
+}
