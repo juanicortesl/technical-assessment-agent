@@ -161,7 +161,6 @@ examples/[level]/[assessment-name]/
 ├── tsconfig.json             # TypeScript config
 ├── jest.config.js            # Test config (or vitest.config.ts for React)
 ├── README.md                 # Candidate instructions
-├── RUBRIC.md                 # Evaluation guide (private)
 └── code/
     ├── [main-file].ts(x)     # Primary code to review (100-300 lines)
     ├── server.ts             # Runnable entry point
@@ -169,6 +168,8 @@ examples/[level]/[assessment-name]/
     ├── [supporting].ts       # Any supporting files
     └── __tests__/
         └── *.test.ts(x)      # Test suite
+
+rubrics/[level]/[assessment-name].md  # Evaluation guide (private, separate folder)
 ```
 
 ### Step 3: Write the Main Code File
@@ -361,7 +362,7 @@ Before considering the assessment complete:
 - [ ] Application actually works (can curl/browse to it)
 - [ ] Tests run (some pass, some fail due to bugs)
 - [ ] README includes setup instructions with example commands
-- [ ] RUBRIC lists all embedded issues
+- [ ] Rubric placed in `rubrics/[level]/[assessment-name].md` and lists all embedded issues
 - [ ] Code feels realistic, not contrived
 - [ ] Issues span multiple categories (not just one type)
 - [ ] 8-12 issues total, mix of critical/major/minor
@@ -422,7 +423,10 @@ Before considering the assessment complete:
 
 See existing assessments in `examples/` directory for reference:
 - `examples/mid-level/api-endpoint-review/` - SQL injection, validation issues
+  - Rubric: `rubrics/mid-level/api-endpoint-review.md`
 - `examples/senior/data-pipeline-review/` - Race conditions, N+1 queries
+  - Rubric: `rubrics/senior/data-pipeline-review.md`
 - `examples/staff/microservice-review/` - Distributed systems issues
+  - Rubric: `rubrics/staff/microservice-review.md`
 
 When creating new assessments, mirror this structure and quality.

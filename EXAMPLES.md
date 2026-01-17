@@ -9,7 +9,8 @@ Each example includes:
 - `code/` - Source code to review
 - `code/__tests__/` - Test suite
 - `README.md` - Setup instructions and context
-- `RUBRIC.md` - Evaluation guide (keep private)
+
+Evaluation rubrics are stored separately in `rubrics/[level]/[assessment-name].md` (keep private)
 
 ### Running an Example
 
@@ -139,18 +140,19 @@ npm start
 ## Project Structure (Each Example)
 
 ```
-example-name/
+examples/[level]/example-name/
 ├── package.json              # Dependencies and npm scripts
 ├── tsconfig.json             # TypeScript configuration
 ├── jest.config.js (or vite.config.ts)  # Test configuration
 ├── README.md                 # Candidate instructions
-├── RUBRIC.md                 # Evaluation guide (private)
 └── code/
     ├── [main-file].ts(x)     # Code to review
     ├── server.ts             # Server/app entry point
     ├── database.ts           # Mock database
     └── __tests__/
         └── *.test.ts(x)      # Test suite
+
+rubrics/[level]/example-name.md  # Evaluation guide (private, separate folder)
 ```
 
 ---
@@ -191,7 +193,8 @@ npm start # Start server
    - Staff-level candidates know what NOT to fix
    - Over-engineering is a red flag
 
-4. **Use the RUBRIC.md**
+4. **Use the rubric**
+   - Located in `rubrics/[level]/[assessment-name].md`
    - See what strong candidates typically notice
    - Identify red flags in reasoning
 

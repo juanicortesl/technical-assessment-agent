@@ -58,7 +58,7 @@ npm test   # Runs test suite
 
 1. Share an assessment directory with the candidate
 2. Ask them to record their review (screen + face)
-3. Use `RUBRIC.md` to evaluate their response
+3. Use the rubric in `rubrics/[level]/[assessment-name].md` to evaluate their response
 4. Look for:
    - Issue prioritization (critical vs minor)
    - Clear explanations of tradeoffs
@@ -72,18 +72,19 @@ See [EXAMPLES.md](./EXAMPLES.md) for detailed setup instructions for each assess
 Each assessment includes:
 
 ```
-assessment-name/
+examples/[level]/assessment-name/
 ├── package.json              # Dependencies and npm scripts
 ├── tsconfig.json             # TypeScript configuration
 ├── jest.config.js            # Test configuration
 ├── README.md                 # Candidate instructions
-├── RUBRIC.md                 # Evaluation guide (keep private)
 └── code/
     ├── [main-file].ts(x)     # Code to review
     ├── server.ts             # Runnable server/app
     ├── database.ts           # Mock database
     └── __tests__/
         └── *.test.ts(x)      # Test suite
+
+rubrics/[level]/assessment-name.md  # Evaluation guide (keep private)
 ```
 
 ### For Candidates (README.md)
@@ -93,11 +94,12 @@ assessment-name/
 - 30-minute time estimate
 - Guidance on what to discuss
 
-### For Evaluators (RUBRIC.md)
+### For Evaluators (Rubric)
 - Priority issues to identify
 - What strong/average/weak candidates notice
 - Red flags in reasoning
 - Complete list of embedded issues (8-12 per assessment)
+- Located in `rubrics/[level]/[assessment-name].md`
 
 ## Difficulty Levels
 
@@ -195,7 +197,7 @@ Claude will create a complete, runnable assessment with:
 - ✅ All necessary files (package.json, tests, etc.)
 - ✅ Working code with intentional bugs
 - ✅ README with setup instructions
-- ✅ RUBRIC with evaluation criteria
+- ✅ Rubric with evaluation criteria (in separate `rubrics/` folder)
 - ✅ 8-12 embedded issues across multiple categories
 
 ### Customization Options
@@ -240,9 +242,10 @@ error handling issues"
 
 Claude will:
 1. Create all files in `examples/[level]/[name]/`
-2. Test that `npm install` and `npm start` work
-3. Verify tests run (some passing, some failing)
-4. Provide you with the assessment location
+2. Create the rubric in `rubrics/[level]/[name].md`
+3. Test that `npm install` and `npm start` work
+4. Verify tests run (some passing, some failing)
+5. Provide you with the assessment location
 
 Then you can:
 ```bash
